@@ -15,7 +15,7 @@ class CreateSemesters extends Command
      *
      * @var string
      */
-    protected $signature = 'semesters:create';
+    protected $signature = 'semester:create';
 
     /**
      * The console command description.
