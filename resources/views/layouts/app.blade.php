@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Exam Management System') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -29,9 +29,9 @@
           integrity="sha512-3JRrEUwaCkFUBLK1N8HehwQgu8e23jTH4np5NHOmQOobuC4ROQxFwFgBLTnhcnQRMs84muMh0PnnwXlPq5MGjg=="
           crossorigin="anonymous"/>
 </head>
-<body>
+<body class="bg-dark">
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-dark 2xl:bg-black shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ 'Exam Management System' }}
@@ -53,23 +53,23 @@
                     <!-- Authentication Links -->
                     @can('access-admin')
                         @if (Route::has('create_lesson'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('create_lesson') }}">{{ __('Create Lesson') }}</a>
+                            <li class="nav-item text-white-50">
+                                <a class="nav-link text-warning" href="{{ route('create_lesson') }}">{{ __('Create Lesson') }}</a>
                             </li>
                         @endif
                         @if (Route::has('register_student'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register_student') }}">{{ __('New Student') }}</a>
+                                <a class="nav-link text-warning" href="{{ route('register_student') }}">{{ __('New Student') }}</a>
                             </li>
                         @endif
                         @if (Route::has('register_lecturer'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register_lecturer') }}">{{ __('New Lecturer') }}</a>
+                                <a class="nav-link text-warning" href="{{ route('register_lecturer') }}">{{ __('New Lecturer') }}</a>
                             </li>
                         @endif
                         @if (Route::has('show_assignments'))
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link text-warning"
                                    href="{{ route('show_assignments') }}">{{ __('Show Assignments') }}</a>
                             </li>
                         @endif
@@ -78,17 +78,17 @@
                     @can('access-lecturer')
                         @if(Route::has('exam.create'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('exam.create') }}">{{ __('Create Exam') }}</a>
+                                <a class="nav-link text-warning" href="{{ route('exam.create') }}">{{ __('Create Exam') }}</a>
                             </li>
                         @endif
                         @if(Route::has('exam.my_exams'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('exam.my_exams') }}">{{ __('My Exams') }}</a>
+                                <a class="nav-link text-warning" href="{{ route('exam.my_exams') }}">{{ __('My Exams') }}</a>
                             </li>
                         @endif
                         @if(Route::has('lecturer_my_lessons'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('lecturer_my_lessons') }}">{{ __('My Lessons') }}</a>
+                                <a class="nav-link text-warning" href="{{ route('lecturer_my_lessons') }}">{{ __('My Lessons') }}</a>
                             </li>
                         @endif
                         {{--                                @if(Route::has('assign_grade'))--}}
@@ -100,19 +100,19 @@
                     @can('access-student')
                         @if(Route::has('student_register_lesson'))
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link text-warning"
                                    href="{{ route('student_register_lesson') }}">{{ __('Register Lesson') }}</a>
                             </li>
                         @endif
                         @if(Route::has('student_my_exams'))
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link text-warning"
                                    href="{{ route('student_my_exams') }}">{{ __('My Exams') }}</a>
                             </li>
                         @endif
                             @if(Route::has('student_show_notifications'))
                                 <li class="nav-item">
-                                    <a class="nav-link"
+                                    <a class="nav-link text-warning"
                                        href="{{ route('student_show_notifications') }}">{{ __('Notifications') }}</a>
                                 </li>
                             @endif
@@ -121,7 +121,7 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-warning" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
                     @else

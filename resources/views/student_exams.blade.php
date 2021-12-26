@@ -12,6 +12,7 @@
                 {!! session('message') !!}
             </div>
         @endif
+            <div class="card">
         <table class="table">
             <thead>
                 <tr>
@@ -36,5 +37,6 @@
             @endforeach
             </tbody>
         </table>
+            </div>
     </div>
 @endsection

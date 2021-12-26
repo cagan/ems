@@ -18,26 +18,32 @@
             </div>
         @endif
 
-        <h3 class="col-md-6 offset-md-4">Lessons: </h3>
-        <form method="POST" action="{{ route('student_register_lesson_store') }}">
-            @csrf
-            <div class="form-group row">
-                <label for="exampleInputEmail1" class="col-md-4 col-form-label text-md-right">Lessons</label>
-                <div class="col-md-6">
-                    <select class="form-control" name="lesson_id">
-                        @foreach($lessons as $lesson)
-                            <option value="{{ $lesson->id }}">{{ $lesson->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="col-md-6 offset-md-4">Lessons: </h3>
             </div>
-            <div class="form-group row mb-0">
-                <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="btn btn-primary">
-                        {{ __('Register Lesson') }}
-                    </button>
-                </div>
+            <div class="card-body">
+                <form method="POST" action="{{ route('student_register_lesson_store') }}">
+                    @csrf
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1" class="col-md-4 col-form-label text-md-right">Lessons</label>
+                        <div class="col-md-6">
+                            <select class="form-control" name="lesson_id">
+                                @foreach($lessons as $lesson)
+                                    <option value="{{ $lesson->id }}">{{ $lesson->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Register Lesson') }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 @endsection

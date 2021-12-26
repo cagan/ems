@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
+
 @section('content')
-    <h1>New Exam:</h1>
+    <div class="card">
+        <div class="card-header">
+            <h1>New Exam:</h1>
+        </div>
 
     @if($errors->any())
         <div class="alert alert-danger">
@@ -20,6 +24,7 @@
         </div>
     @endif
 
+    <div class="card-body">
     <form method="post" action="{{ route('exam.create') }}">
         @csrf
         <div class="form-group">
@@ -47,5 +52,7 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    </div>
+    </div>
 
 @endsection

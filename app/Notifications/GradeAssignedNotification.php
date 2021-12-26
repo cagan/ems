@@ -43,7 +43,7 @@ class GradeAssignedNotification extends Notification implements ShouldQueue
         return (new MailMessage)
             ->from('info@stuexam.com')
             ->line("Your $this->lessonName exam result has been announced!")
-            ->action('Show results', 'http://localhost/student/my_exams');
+            ->action('Show results', route('student_my_exams'));
     }
 
     /**
